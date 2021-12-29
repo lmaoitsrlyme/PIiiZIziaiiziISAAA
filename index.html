@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Menu Card</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+  <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
+  <script src = "https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+ 
+ 
+ 
+  <script src="./cries.js"></script>
+  <script src="./BSDGVUJHGDSJGBDGV.js"></script>
+  
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+
+  <!-- Local StyleSheet -->
+  <link href = "./stYyLE.css" rel = "stylesheet"/>
+  <!-- use small size images to create marker, marker should be a square shape, black and grey to be used as bg colours, avoid transparent, white or any other colours -->
+  
+  <!--Marker Handler Src-->
+ 
+
+</head>
+
+<body style="margin : 0px; overflow: hidden;">
+
+  <a-scene 
+    embedded vr-mode-ui="enabled: false"     
+    arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960;debugUIEnabled: false;"
+    gesture-detector
+    create-buttons
+    >
+
+
+  
+    <!-- Camera -->
+    <a-entity camera></a-entity>
+
+    <a-assets>
+      <a-asset-item id = "pizza" src = "./assets/pizza/scene.gltf">
+  
+        </a-asset-item>
+      </a-assets>
+  
+  
+  
+  
+    
+    <a-marker id = "pizzamarker"
+              type = "pattern"
+              url = "./assets/dish-markers/pattern-pizza.patt"
+              cursor = "rayOrigin: mouse"
+              marker-handler
+    >
+    
+    <a-entity id = "pizzamodel"
+              position = "-2 0 0"
+              gltf-model = "#pizza"
+              scale = "0.05 0.05 0.05"
+              gesture-handler
+              >
+    </a-entity>
+    
+    <a-plane position = "0 0 0"
+             width = "1.5"
+             height = "1.5"
+             rotation = "-90 0 0"
+    >
+    
+                    <a-plane position = "0 0.89 0.02"
+                             width = "1.49"
+                             height = "0.3"
+                             rotation = "0 0 0"
+                             color = "#f4a9bb"
+                    >
+
+                        <a-entity position = "0.5 0 0.1"
+                                  rotation = "0 0 0 "
+                                  text = "font: monoid; value: hawaiian pizza !!; width: 1.8; height: 1; align: center: color:black"></a-entity>
+                                  
+                    </a-plane>
+                        <a-entity position = "0 0 0.1"
+                                  rotation = "0 0 0 "
+                                  text = "font: monoid; value: diced pineapple \n\ndiced ham \n\npizza sauxa \n\nmozarella cheese \n\nparmesan cheese for toppings \n\nflour, yeast, water ; width: 1.8; height: 1; align: center; color:black"></a-entity>
+  </a-plane>
+
+  </a-marker>
+    
+    
+  </a-scene>
+
+  <!-- Button Main Div -->
+ <div id = "button-div">
+
+ </div>
+</body>
+
+</html>
